@@ -18,3 +18,4 @@ n = int(sys.stdin.readline())
 data = list(map(int,sys.stdin.readline().split()))
 command = [list(map(int,sys.stdin.readline().split())) for _ in range(int(sys.stdin.readline()))]
 print(*solve(data,command),sep='\n')
+
