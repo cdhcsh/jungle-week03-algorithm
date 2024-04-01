@@ -3,14 +3,14 @@ import sys
 def solve(k:int,data:list)->int:
     n = len(data)
     dp = [[0 for _ in range(k+1)] for _ in range(n+1)]
-    for i in range(1,n+1):
-        for j in range(k+1):
-            weight,value = data[i][0],data[i-1][1]
+    for item in range(1,n+1):
+        for w in range(k+1):
+            weight,value = data[item-1][0],data[item-1][1]
 
-            if j < weight:
-                dp[i][j] = dp[i-1][j]
+            if w < weight:
+                dp[item][w] = dp[item-1][w]
             else:
-                dp[i][j] = max(value + dp[i-1][j-weight],dp[i-1][j])
+                dp[item][w] = max(value + dp[item-1][w-weight],dp[item-1][w])
     return dp[n][k]
 
 

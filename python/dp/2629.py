@@ -6,7 +6,6 @@ def solve(data: list, targets: list) -> list:
     dp.add(0)
     result = []
     for weight in data:
-        n = len(dp)
         for no in list(dp):
             dp.add(no + weight)
             dp.add(abs(no - weight))
