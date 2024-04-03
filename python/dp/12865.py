@@ -4,8 +4,8 @@ def solve(k:int,data:list)->int:
     n = len(data)
     dp = [[0 for _ in range(k+1)] for _ in range(n+1)]
     for item in range(1,n+1):
+        weight,value = data[item-1][0],data[item-1][1]
         for w in range(k+1):
-            weight,value = data[item-1][0],data[item-1][1]
 
             if w < weight:
                 dp[item][w] = dp[item-1][w]
